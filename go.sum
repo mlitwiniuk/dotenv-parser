@@ -1,0 +1,4 @@
+github.com/bkeepers/dotenv v1.0.2 h1:Yx+06slQh+AmJugvD1zOLldJoDHpa4yOckcJqNjQTiE=
+github.com/bkeepers/dotenv v2.7.5+incompatible h1:S5/T9WE2Axu6LLrxMCSh6sdz80/OvCcO+GIXJruyCzc=
+github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
