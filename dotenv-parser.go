@@ -32,15 +32,18 @@ func parseFile(filename string) {
 
 	f.Seek(0, 0)
 
-	pattern := regexp.MustCompile(`^[#A-Z][A-Z0-9_]+\s+=\s['"]?.*['"]?\s*[a-zA-Z0-9_]+\s+=`)
+	re := regexp.MustCompile(`^[#A-Z][A-Z0-9_]+\s*=\s*(['"])?.*?(['"])?\s*[A-Z_][A-Z0-9_]+\s*=`)
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		text := scanner.Text()
-		loc := pattern.FindIndex([]byte(text))
-		if len(loc) > 0 {
-			log.Fatal(text)
+		if re.MatchString(text) {
+			sub := re.FindStringSubmatch(text)
+			if sub[1] == sub[2] {
+				log.Fatal(text)
+			}
 		}
+
 	}
 
 	if err := scanner.Err(); err != nil {
